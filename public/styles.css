@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(153, 194, 186);
+  margin-left: 10%;
+  margin-top: 5%;
+  font-size: 5vh;
+}
+
+form {
+  padding-bottom: 10vh;
+}
+
+input {
+  height: 5vh;
+  border-radius: 1vh;
+}
+
+button {
+  height: 5vh;
+  border-radius: 1vh;
+  font-weight: bold;
+}
+
+#bigBox {
+  width: 75%;
+}
+#clock {
+  font-size: 10vh;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: rgb(107, 13, 84);
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+#clearStorage {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  height: 10vh;
+  width: 30vh;
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+#totalMessage {
+  color: rgb(107, 13, 84);
+  font-weight: bold;
+}

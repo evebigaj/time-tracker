@@ -1,0 +1,12 @@
+bugs:
+* adding to total after countdown clears memory
+[hypothesis: two distinct memories/constants dependinig on whether the path is via countdown or manual add ]
+* timers can run simultaneously (new timer doesn't clear old)
+
+make it add time if timer was interrupted 
+(or: react version: continually update)
+add zeros
+stop previous clock from running on new time set
+
+* find out why you need a backend 
+
