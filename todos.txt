@@ -1,0 +1,15 @@
+possible extensions:
+* responsive design
+* make it pretty
+* make clear storage reversible
+* track time by category 
+* track time by day 
+* store time from previous days 
+- firebase?? 
+
+bonus: 
+* notes or intentions 
+
+responsive design
+- remove node modules from github
+post to netlify 
