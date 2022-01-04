@@ -1,0 +1,6 @@
+To ignore a file you've already committed:
+* add path file to .gitignore
+*git rm -r --cached . 
+git add .
+git commit -m "gitignore [directoryname]"
+[source: https://www.git-tower.com/learn/git/faq/ignore-tracked-files-in-git]

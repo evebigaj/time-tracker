@@ -1,7 +1,16 @@
 possible extensions:
+* design [goal: user understands at first glance 
+how to use]
+- title, subtitle, icon
+- make timer look like timer 
+- "add manually" instead of "minutes to add" 
+( with greyed out time)
+- reset instead of clear storage 
+- make reset button smaller 
+
+* make clear storage reversible
 * responsive design
 * make it pretty
-* make clear storage reversible
 * track time by category 
 * track time by day 
 * store time from previous days 
