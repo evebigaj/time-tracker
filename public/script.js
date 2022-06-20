@@ -1,7 +1,7 @@
 let currentTotal = localStorage.getItem('total') || 0
 
 document.getElementById('totalMessage').innerHTML = `You have tracked ${currentTotal} 
-minutes today.`
+ minutes today and ${localStorage.getItem('test')} minutes in category test.`
 
 const clearValue = () => {
     const timeInput = document.getElementById('timeInput')
@@ -27,14 +27,25 @@ const change = () => {
     timeInput.value = `${hours}:${minutes}:${seconds}`
 
 }
-const addToStorage = () => {
+//make this take a parameter for the category 
+const addToStorage = (category) => {
     const numberToAdd = Number(document.getElementById("storageInput").value);
-    const oldTotal = Number(localStorage.getItem("total"))
+    const oldTotal = Number(localStorage.getItem("total"))||0;
     const newTotal = numberToAdd + oldTotal;
     localStorage.setItem("total", newTotal);
+    //console.log(category)
+    if(category){
+        
+    localStorage.setItem(category, newTotal);
+    //console.log(localStorage.getItem(category))
+    
+    
+    }
+    //e.preventDefault();
     return false
 }
 
+//make this take category parameter
 const clearStorage = () => {
     localStorage.setItem('total', 0);
     currentTotal = localStorage.getItem('total') || 0;
@@ -43,7 +54,7 @@ const clearStorage = () => {
 }
 
 
-
+//add parameter for category 
 const runTimer = () => {
     // Get a reference to the last interval + 1
     const interval_id = window.setInterval(function () { }, Number.MAX_SAFE_INTEGER);
@@ -60,7 +71,7 @@ const runTimer = () => {
     //console.log('test')
     //console.log(stringSeconds, stringMinutes, stringHours)
     const timeInSeconds = Number(stringHours)*60*60 + Number(stringMinutes)*60 + Number(stringSeconds)
-    console.log(timeInSeconds)
+    //console.log(timeInSeconds)
     const initialTime = timeInSeconds/60
     let timeInMilliSeconds = timeInSeconds*1000
     let startTime = Date.now()
@@ -89,6 +100,7 @@ const runTimer = () => {
             document.getElementById("clock").innerHTML = "Time's up!";
 
             //update storage:
+            //this is where parameter for category should go 
             let prevTotal = Number(localStorage.getItem('total')) || 0;
             let total = Number(initialTime) + prevTotal 
             localStorage.setItem('total', `${total}`);
