@@ -8,7 +8,7 @@
         <main id="bigBox">
             <form onsubmit="return runTimer()">
                 <label for="timeInput">Minutes to count down:</label>
-                <input type="text" id="timeInput" name="timeInput">
+                <input type="text" id="timeInput" name="timeInput" value="00:00:00" oninput = "return change()">
                 <button type="submit">Start</button>
             </form>
 

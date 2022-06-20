@@ -1,3 +1,5 @@
+make backspace work
+
 possible extensions:
 * design [goal: user understands at first glance 
 how to use]

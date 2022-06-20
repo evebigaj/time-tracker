@@ -3,7 +3,30 @@ let currentTotal = localStorage.getItem('total') || 0
 document.getElementById('totalMessage').innerHTML = `You have tracked ${currentTotal} 
 minutes today.`
 
+const clearValue = () => {
+    const timeInput = document.getElementById('timeInput')
+    timeInput.value = ''
+}
 
+//currently doesn't handle continuing to input after six digits
+const change = () => {
+    const timeInput = document.getElementById('timeInput')
+    
+    
+    //remove colons
+    let digits = timeInput.value.replaceAll(':','')
+
+    //remove leading zero:
+    digits = digits.slice(1)
+    let hours = digits.slice(0,2);
+    let minutes = digits.slice(2,4);
+    let seconds = digits.slice(4,6)
+    console.log(hours, minutes, seconds)
+
+    //combine and put colons back in:
+    timeInput.value = `${hours}:${minutes}:${seconds}`
+
+}
 const addToStorage = () => {
     const numberToAdd = Number(document.getElementById("storageInput").value);
     const oldTotal = Number(localStorage.getItem("total"))
@@ -30,9 +53,16 @@ const runTimer = () => {
         window.clearInterval(i);
     }
     
-    const timeInMinutes = document.getElementById("timeInput").value
-    const initialTime = timeInMinutes
-    let timeInMilliSeconds = timeInMinutes*1000*60;
+    const timeString = document.getElementById("timeInput").value;
+    const stringHours = timeString.slice(0,2);
+    const stringMinutes = timeString.slice(3,5);
+    const stringSeconds = timeString.slice(6,8)
+    //console.log('test')
+    //console.log(stringSeconds, stringMinutes, stringHours)
+    const timeInSeconds = Number(stringHours)*60*60 + Number(stringMinutes)*60 + Number(stringSeconds)
+    console.log(timeInSeconds)
+    const initialTime = timeInSeconds/60
+    let timeInMilliSeconds = timeInSeconds*1000
     let startTime = Date.now()
     let x = setInterval(() => {
 
