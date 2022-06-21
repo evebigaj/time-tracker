@@ -1,8 +1,17 @@
 let categoryInput = document.getElementById('category');
 let currentTotal = localStorage.getItem('total') || 0
+console.log(localStorage)
+let message = ''
+localStorage.removeItem('[object HTMLInputElement]');
+for([key, value] of Object.entries(localStorage)){
+    if (typeof key == 'string'&& key != ''){ 
+    message = message + ` you have tracked ${value} minutes in category ${key}`
+    }
+}
 
-document.getElementById('totalMessage').innerHTML = `You have tracked ${currentTotal} 
- minutes today and ${localStorage.getItem('test')} minutes in category test.`
+document.getElementById('totalMessage').innerHTML = message;
+// `You have tracked ${currentTotal} 
+//  minutes today and ${localStorage.getItem('test')} minutes in category test.`
 
 const clearValue = () => {
     const timeInput = document.getElementById('timeInput')
