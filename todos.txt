@@ -1,3 +1,11 @@
+next step: 
+* clean up code so that category and
+category.value mistakes don't happen
+* make time be stored for all categories: 
+> figure out if there's a way to loop through 
+everything in local storage 
+
+
 make backspace work
 
 possible extensions:

@@ -1,4 +1,4 @@
-let category = document.getElementById('category');
+let categoryInput = document.getElementById('category');
 let currentTotal = localStorage.getItem('total') || 0
 
 document.getElementById('totalMessage').innerHTML = `You have tracked ${currentTotal} 
@@ -31,17 +31,18 @@ const change = () => {
 //make this take a parameter for the category 
 const addToStorage = () => {
     const numberToAdd = Number(document.getElementById("storageInput").value);
-    if(category.value){
-        console.log('category')
-        const oldCategory = Number(localStorage.getItem(category.value)||0);
+    let category = categoryInput.value
+    if(category){
+        // console.log('category')
+        const oldCategory = Number(localStorage.getItem(category)||0);
         const newCategory = oldCategory + numberToAdd;
        
-        localStorage.setItem(category.value, newCategory);
+        localStorage.setItem(category, newCategory);
     //console.log(localStorage.getItem(category))
     return false
     
     }
-    console.log('got out of conditional ')
+    // console.log('got out of conditional ')
     const oldTotal = Number(localStorage.getItem("total"))||0;
     const newTotal = numberToAdd + oldTotal;
     localStorage.setItem("total", newTotal);
