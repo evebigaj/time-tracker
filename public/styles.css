@@ -6,7 +6,21 @@ body {
 }
 
 form {
+  /* display:flex;
+  gap: 50px; */
   padding-bottom: 10vh;
+
+}
+
+#left {
+  margin-top: 10vh;
+}
+
+label{
+  display: inline-block;
+  width: 185px;
+  margin-right: 5px;
+  text-align: right;
 }
 
 input {
@@ -21,7 +35,9 @@ button {
 }
 
 #bigBox {
-  width: 75%;
+  
+  display: flex;
+  column-gap: 150px;
 }
 #clock {
   font-size: 10vh;
@@ -34,13 +50,14 @@ button {
 }
 
 #clearStorage {
-  text-align: center;
+  display:none;
+  /* text-align: center;
   margin: 0 auto;
   display: block;
   height: 10vh;
   width: 30vh;
   font-size: 3vh;
-  font-weight: bold;
+  font-weight: bold; */
 }
 
 #totalMessage {

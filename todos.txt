@@ -1,3 +1,6 @@
+so minimum stylistic things:
+make the tracked things appear on the right of screen
+make it minutes to add 
 so 10 seconds is 1/6 = 
 current state: it's chopping off a digit instead
 of rounding it off (it's always rounding down)
