@@ -1,3 +1,9 @@
+so 10 seconds is 1/6 = 
+current state: it's chopping off a digit instead
+of rounding it off (it's always rounding down)
+
+so the thing to do is figure out how to 
+r
 ok, so next options are either make the messages
 readable
 or style the page otherwise 

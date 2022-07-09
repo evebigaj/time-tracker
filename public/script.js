@@ -4,10 +4,11 @@ console.log(localStorage)
 
 
 const writeMessage = () => {
-
+let container = document.getElementById('totalMessage');
+container.innerHTML = '';
 for([key, value] of Object.entries(localStorage)){
     if (typeof key == 'string' && key != ''){ 
-        let container = document.getElementById('totalMessage');
+        
         let message = `${key}: ${value}`;
         container.append(message);
         let br = document.createElement('br');
@@ -55,7 +56,7 @@ const addToStorage = () => {
     if(category){
         // console.log('category')
         const oldCategory = Number(localStorage.getItem(category)||0);
-        const newCategory = oldCategory + numberToAdd;
+        const newCategory = (oldCategory + numberToAdd).toFixed(2)
        
         localStorage.setItem(category, newCategory);
     //console.log(localStorage.getItem(category))
@@ -64,7 +65,7 @@ const addToStorage = () => {
     }
     // console.log('got out of conditional ')
     const oldTotal = Number(localStorage.getItem("total"))||0;
-    const newTotal = numberToAdd + oldTotal;
+    const newTotal = (numberToAdd + oldTotal).toFixed(2);
     localStorage.setItem("total", newTotal);
     //console.log(category)
     
@@ -133,21 +134,21 @@ const runTimer = () => {
             console.log(`the category is ${category}`)
             if(category){
                 let prevTotal = Number(localStorage.getItem(category)) || 0;
-                let total = Number(initialTime) + prevTotal 
+                let total = (Number(initialTime) + prevTotal).toFixed(2);
                 localStorage.setItem(category, `${total}`);
                 currentTotal = localStorage.getItem(category) || 0;
 
             }
             else{
             let prevTotal = Number(localStorage.getItem('total')) || 0;
-            let total = Number(initialTime) + prevTotal 
+            let total = (Number(initialTime) + prevTotal).toFixed(2); 
             localStorage.setItem('total', `${total}`);
             currentTotal = localStorage.getItem('total') || 0;
            //document.getElementById('totalMessage').innerHTML = '';
            // writeMessage();
             
             }
-            document.getElementById('totalMessage').innerHTML = 'test';
+        
            writeMessage();
         };
     //setup for next loop through interval:
