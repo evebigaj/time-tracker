@@ -1,3 +1,9 @@
+ok, so next options are either make the messages
+readable
+or style the page otherwise 
+
+well both have to be done... 
+
 next step: 
 make the message be updated after timer ends
 figure out where the random numbers are coming from 

@@ -4,13 +4,18 @@ console.log(localStorage)
 
 
 const writeMessage = () => {
-    let message = ''
+
 for([key, value] of Object.entries(localStorage)){
-    if (typeof key == 'string'&& key != ''){ 
-    message = message + ` you have tracked ${value} minutes in category ${key}`
+    if (typeof key == 'string' && key != ''){ 
+        let container = document.getElementById('totalMessage');
+        let message = `${key}: ${value}`;
+        container.append(message);
+        let br = document.createElement('br');
+        container.append(br);
+    
     }
 }
-document.getElementById('totalMessage').innerHTML = message;
+
 }
 
 writeMessage();
