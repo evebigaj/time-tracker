@@ -1,3 +1,5 @@
+now want: remove category 
+
 so minimum stylistic things:
 make the tracked things appear on the right of screen
 make it minutes to add 

@@ -1,5 +1,5 @@
 let categoryInput = document.getElementById('category');
-let currentTotal = localStorage.getItem('total') || 0
+let currentTotal = localStorage.getItem('other') || 0
 console.log(localStorage)
 
 
@@ -49,7 +49,7 @@ const change = () => {
     timeInput.value = `${hours}:${minutes}:${seconds}`
 
 }
-//make this take a parameter for the category 
+
 const addToStorage = () => {
     const numberToAdd = Number(document.getElementById("storageInput").value);
     let category = categoryInput.value
@@ -62,6 +62,11 @@ const addToStorage = () => {
     //console.log(localStorage.getItem(category))
     return false
     
+    }
+    else{
+        let old = Number(localStorage.getItem('other'))||0;
+        const newNumber = old + numberToAdd;
+        localStorage.setItem('other', newNumber)
     }
     // console.log('got out of conditional ')
     const oldTotal = Number(localStorage.getItem("total"))||0;
@@ -138,17 +143,22 @@ const runTimer = () => {
                 localStorage.setItem(category, `${total}`);
                 currentTotal = localStorage.getItem(category) || 0;
 
+                
+
             }
             else{
-            let prevTotal = Number(localStorage.getItem('total')) || 0;
+            let prevTotal = Number(localStorage.getItem('other')) || 0;
             let total = (Number(initialTime) + prevTotal).toFixed(2); 
-            localStorage.setItem('total', `${total}`);
-            currentTotal = localStorage.getItem('total') || 0;
+            localStorage.setItem('other', `${total}`);
+            currentTotal = localStorage.getItem('other') || 0;
+           
            //document.getElementById('totalMessage').innerHTML = '';
            // writeMessage();
             
             }
-        
+             let prevFullTotal = Number(localStorage.getItem('total'))||0;
+                let newFullTotal = (Number(initialTime) + prevFullTotal).toFixed(2);
+                localStorage.setItem('total', newFullTotal);
            writeMessage();
         };
     //setup for next loop through interval:
