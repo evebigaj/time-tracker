@@ -6,6 +6,10 @@
 
     <body>
         <main id="bigBox">
+            <form>
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category">
+            </form>
             <form onsubmit="return runTimer()">
                 <label for="timeInput">Minutes to count down:</label>
                 <input type="text" id="timeInput" name="timeInput" value="00:00:00" oninput = "return change()">
@@ -15,8 +19,7 @@
             <form id="storage" onsubmit="addToStorage()">
                 <label for="storageInput">Minutes to add to total:</label>
                 <input type="text" id="storageInput" name="storageInput">
-                <label for="category">Category:</label>
-                <input type="text" id="category" name="category">
+                
 
                 <button type="submit">Submit</button>
             </form>
