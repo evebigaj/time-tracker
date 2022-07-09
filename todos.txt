@@ -1,9 +1,25 @@
 next step: 
-* clean up code so that category and
-category.value mistakes don't happen
-* make time be stored for all categories: 
-> figure out if there's a way to loop through 
-everything in local storage 
+make the message be updated after timer ends
+figure out where the random numbers are coming from 
+
+current state: 
+setting the inner html after running the timer does nothing 
+
+hypotheses:
+* there's something around defering or returning 0 
+that I need to do? 
+options:
+* make timer also work in category 
+* make format of message better
+
+* make clear storage work in category 
+
+(the end state might just be that the
+message is only displayed for selected category?)
+
+design:
+* category goes on top, 
+everything else is in a box
 
 
 make backspace work

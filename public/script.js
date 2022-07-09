@@ -1,15 +1,21 @@
 let categoryInput = document.getElementById('category');
 let currentTotal = localStorage.getItem('total') || 0
 console.log(localStorage)
-let message = ''
-localStorage.removeItem('[object HTMLInputElement]');
+
+
+const writeMessage = () => {
+    let message = ''
 for([key, value] of Object.entries(localStorage)){
     if (typeof key == 'string'&& key != ''){ 
     message = message + ` you have tracked ${value} minutes in category ${key}`
     }
 }
-
 document.getElementById('totalMessage').innerHTML = message;
+}
+
+writeMessage();
+
+
 // `You have tracked ${currentTotal} 
 //  minutes today and ${localStorage.getItem('test')} minutes in category test.`
 
@@ -72,6 +78,7 @@ const clearStorage = () => {
 
 //add parameter for category 
 const runTimer = () => {
+    
     // Get a reference to the last interval + 1
     const interval_id = window.setInterval(function () { }, Number.MAX_SAFE_INTEGER);
 
@@ -117,14 +124,30 @@ const runTimer = () => {
 
             //update storage:
             //this is where parameter for category should go 
+            let category = categoryInput.value;
+            console.log(`the category is ${category}`)
+            if(category){
+                let prevTotal = Number(localStorage.getItem(category)) || 0;
+                let total = Number(initialTime) + prevTotal 
+                localStorage.setItem(category, `${total}`);
+                currentTotal = localStorage.getItem(category) || 0;
+
+            }
+            else{
             let prevTotal = Number(localStorage.getItem('total')) || 0;
             let total = Number(initialTime) + prevTotal 
             localStorage.setItem('total', `${total}`);
             currentTotal = localStorage.getItem('total') || 0;
-            document.getElementById('totalMessage').innerHTML = `You have tracked ${currentTotal} minutes today`
+           //document.getElementById('totalMessage').innerHTML = '';
+           // writeMessage();
+            
+            }
+            document.getElementById('totalMessage').innerHTML = 'test';
+           writeMessage();
         };
     //setup for next loop through interval:
     startTime = Date.now()
     }, 1000)
-
+    
+    
     return false}
