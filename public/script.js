@@ -8,7 +8,17 @@ let container = document.getElementById('totalMessage');
 container.innerHTML = '';
 for([key, value] of Object.entries(localStorage)){
     if (typeof key == 'string' && key != ''){ 
+        let button = document.createElement('button')
+        container.append(button);
+        button.innerHTML = 'x';
+        button.id = key;
+        let remove = () => {console.log(`the key is ${key}`)
+            localStorage.removeItem(key);
+            location.reload();
+        }
+        button.addEventListener('click', remove);
         
+
         let message = `${key}: ${value}`;
         container.append(message);
         let br = document.createElement('br');
@@ -60,7 +70,7 @@ const addToStorage = () => {
        
         localStorage.setItem(category, newCategory);
     //console.log(localStorage.getItem(category))
-    return false
+   
     
     }
     else{
@@ -68,7 +78,7 @@ const addToStorage = () => {
         const newNumber = old + numberToAdd;
         localStorage.setItem('other', newNumber)
     }
-    // console.log('got out of conditional ')
+    console.log('got out of conditional ')
     const oldTotal = Number(localStorage.getItem("total"))||0;
     const newTotal = (numberToAdd + oldTotal).toFixed(2);
     localStorage.setItem("total", newTotal);

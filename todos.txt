@@ -1,3 +1,20 @@
+adding to category does not add to total 
+(but adding uncategorized does?)
+
+current behavior:
+the 'x' sometimes removes a different entry
+
+next step:
+figure out why
+
+figure out why onclick isn't working
+
+next to each category label, have a button 
+that says "x"
+its id is the key (label) 
+and onclick, it removes the 
+
+* make total show up at bottom 
 now want: remove category 
 
 so minimum stylistic things:
