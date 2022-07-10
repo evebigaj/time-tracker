@@ -1,3 +1,11 @@
+make countdown happen inside countdown box 
+
+styling:
+make category be on top and the minutes to add 
+and timer side by side
+
+make 'x' formatting better 
+
 adding to category does not add to total 
 (but adding uncategorized does?)
 

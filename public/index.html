@@ -2,6 +2,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Major+Mono+Display&display=swap"
+            rel="stylesheet">
     </head>
 
     <body>
@@ -12,7 +17,6 @@
             <input type="text" id="category" name="category">
             </form>
             <form onsubmit="return runTimer()">
-                <label for="timeInput">Count down:</label>
                 <input type="text" id="timeInput" name="timeInput" value="00:00:00" oninput = "return change()">
                 <button type="submit">Start</button>
             </form>
