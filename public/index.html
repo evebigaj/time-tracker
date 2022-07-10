@@ -12,23 +12,29 @@
     <body>
         <main id="bigBox">
             <div id="left">
-            <form>
-            <label for="category">Category:</label>
-            <input type="text" id="category" name="category">
-            </form>
-            <form onsubmit="return runTimer()">
-                <input type="text" id="timeInput" name="timeInput" value="00:00:00" oninput = "return change()">
-                <button type="submit">Start</button>
-            </form>
+                <div id="heading">
+                    <form>
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category">
+                    </form>
+                </div>
 
-            <form id="storage" onsubmit="addToStorage()">
-                <label for="storageInput">Minutes to add:</label>
-                <input type="text" id="storageInput" name="storageInput">
+                <div id="actions">
+                    <form onsubmit="return runTimer()">
+                    <input type="text" id="timeInput" name="timeInput" value="00:00:00" oninput = "return change()">
+                    <button type="submit">Start</button>
+                    </form>
+
+                    <form id="storage" onsubmit="addToStorage()">
+                    <label for="storageInput">Minutes to add:</label>
+                    <input type="text" id="storageInput" name="storageInput">
                 
 
-                <button type="submit">Submit</button>
+                     <button type="submit">Submit</button>
                
-            </form>
+                    </form>
+                </div>
+
             <button onclick="clearStorage()" id="clearStorage">Clear Storage</button>
 
             <p id="clock"></p>

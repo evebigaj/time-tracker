@@ -1,10 +1,14 @@
 make countdown happen inside countdown box 
+make 'x' formatting better 
+make start and submit buttons better 
+make category summary closer to the rest 
+make pretty colorful boxes 
 
 styling:
 make category be on top and the minutes to add 
 and timer side by side
 
-make 'x' formatting better 
+
 
 adding to category does not add to total 
 (but adding uncategorized does?)

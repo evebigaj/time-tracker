@@ -23,9 +23,9 @@ form {
 
 label{
   display: inline-block;
-  width: 185px;
+  /* width: 185px; */
   margin-right: 5px;
-  text-align: right;
+  
 }
 
 input {
@@ -47,10 +47,23 @@ font-family: 'Cutive Mono', monospace;
 width: 8ch;
 }
 
+#actions{
+  display:flex;
+  column-gap:20px;
+}
+
+#heading{
+ margin: 0 auto;
+}
+
 #bigBox {
   
   display: flex;
   column-gap: 150px;
+}
+
+#category{
+  width:70%;
 }
 #clock {
   font-size: 10vh;
