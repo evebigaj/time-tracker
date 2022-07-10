@@ -12,11 +12,11 @@ for([key, value] of Object.entries(localStorage)){
         container.append(button);
         button.innerHTML = 'x';
         button.id = key;
-        let remove = () => {console.log(`the key is ${key}`)
-            localStorage.removeItem(key);
+        let remove = (k) => {console.log(`the key is ${k}`)
+            localStorage.removeItem(k);
             location.reload();
         }
-        button.addEventListener('click', remove);
+        button.addEventListener('click', (e) => remove(e.target.id));
         
 
         let message = `${key}: ${value}`;
