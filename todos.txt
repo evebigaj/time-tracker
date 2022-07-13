@@ -1,8 +1,10 @@
+add box shadows
 make countdown happen inside countdown box 
 make 'x' formatting better 
 make start and submit buttons better 
 make category summary closer to the rest 
-make pretty colorful boxes 
+make pretty colorful boxes
+make timer greyed out before input 
 
 styling:
 make category be on top and the minutes to add 

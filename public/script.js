@@ -8,8 +8,10 @@ let container = document.getElementById('totalMessage');
 container.innerHTML = '';
 for([key, value] of Object.entries(localStorage)){
     if (typeof key == 'string' && key != ''){ 
+        let div = document.createElement('div');
         let button = document.createElement('button')
-        container.append(button);
+        container.append(div)
+        div.append(button);
         button.innerHTML = 'x';
         button.id = key;
         let remove = (k) => {console.log(`the key is ${k}`)
@@ -20,9 +22,9 @@ for([key, value] of Object.entries(localStorage)){
         
 
         let message = `${key}: ${value}`;
-        container.append(message);
+        div.append(message);
         let br = document.createElement('br');
-        container.append(br);
+        div.append(br);
     
     }
 }

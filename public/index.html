@@ -14,23 +14,21 @@
             <div id="left">
                 <div id="heading">
                     <form>
-                    <label for="category">Category:</label>
-                    <input type="text" id="category" name="category">
+                    <input type="text" id="category" name="category" placeholder="Category">
                     </form>
                 </div>
 
                 <div id="actions">
                     <form onsubmit="return runTimer()">
                     <input type="text" id="timeInput" name="timeInput" value="00:00:00" oninput = "return change()">
-                    <button type="submit">Start</button>
+                    <button type="submit" id="start">Start</button>
                     </form>
 
                     <form id="storage" onsubmit="addToStorage()">
-                    <label for="storageInput">Minutes to add:</label>
-                    <input type="text" id="storageInput" name="storageInput">
+                    <input type="text" id="storageInput" name="storageInput" placeholder="15">
                 
 
-                     <button type="submit">Submit</button>
+                     <button type="submit">Add minutes</button>
                
                     </form>
                 </div>
